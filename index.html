@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora Troll</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="calculadora">
+    <h2>Calculadora 🤡</h2>
+    <input type="number" id="num1" placeholder="Primer número">
+    <input type="number" id="num2" placeholder="Segundo número">
+
+    <div class="botones">
+      <button onclick="calcular('+')">+</button>
+      <button onclick="calcular('-')">-</button>
+      <button onclick="calcular('*')">×</button>
+      <button onclick="calcular('/')">÷</button>
+    </div>
+
+    <div class="resultado">
+      Resultado: <span id="resultado">-</span>
+    </div>
+  </div>
+
+  <script>
+    function calcular(op) {
+      const n1 = document.getElementById("num1").value;
+      const n2 = document.getElementById("num2").value;
+      let res;
+
+      switch (op) {
+        case '+':
+          // Concatenación en lugar de suma real
+          res = n1 + n2;
+          break;
+        case '-':
+          res = parseFloat(n1) - parseFloat(n2);
+          break;
+        case '*':
+          res = parseFloat(n1) * parseFloat(n2);
+          break;
+        case '/':
+          res = parseFloat(n1) / parseFloat(n2);
+          break;
+      }
+
+      document.getElementById("resultado").innerText = res;
+    }
+  </script>
+</body>
+</html>
